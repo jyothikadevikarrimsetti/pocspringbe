@@ -19,5 +19,10 @@ public class AuthController {
     }
 
 
+    @GetMapping("testadmin")
+    public String test(){
+
+    }
+
 
 }
