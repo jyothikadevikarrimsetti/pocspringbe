@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role {
-
+public Role(String roleName){
+    this.roleName = roleName;
+}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
