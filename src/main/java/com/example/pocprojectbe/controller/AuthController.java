@@ -5,6 +5,7 @@ import com.example.pocprojectbe.model.UserModel;
 import com.example.pocprojectbe.services.PortalUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -29,10 +30,11 @@ public class AuthController {
     }
 
 
-    @GetMapping("testadmin")
-    public String test(){
-        return "login success";
-    }
+        @GetMapping("testadmin")
+        @PreAuthorize("hasRole('ADMIN')")
+        public String test(){
+            return "login success";
+        }
 
 
 }
